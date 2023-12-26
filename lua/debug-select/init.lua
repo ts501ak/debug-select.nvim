@@ -53,7 +53,6 @@ function M.setup(_config)
     config = vim.tbl_deep_extend("force",config, _config or {})
 
     if config.git_worktree_integration == true then
-        print("hello")
         local Worktree = require('git-worktree')
         Worktree.on_tree_change(function(op, metadata)
             if op == Worktree.Operations.Create then
